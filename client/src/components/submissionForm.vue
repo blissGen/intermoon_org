@@ -8,6 +8,7 @@
         placeholder="project title ..."
       />
       <input :style="styleObject02" type="text" placeholder="link ..." />
+      <button :style="styleObject03" type="submit">submit</button>
     </form>
   </div>
 </template>
@@ -27,6 +28,12 @@ export default {
         display: "block",
         margin: "auto",
         marginTop: "25px",
+        width: "300px"
+      },
+      styleObject03: {
+        display: "block",
+        margin: "auto",
+        marginTop: "50px",
         width: "300px"
       }
     };
