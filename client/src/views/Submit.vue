@@ -1,7 +1,16 @@
 <template>
-  <div>
-    <form></form>
+  <div class="submit">
+    <submissionForm />
   </div>
 </template>
 
-<script></script>
+<script>
+import submissionForm from "@/components/submissionForm.vue";
+
+export default {
+  name: "Submit",
+  components: {
+    submissionForm
+  }
+};
+</script>
