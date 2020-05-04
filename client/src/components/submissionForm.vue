@@ -23,7 +23,7 @@ export default {
       styleObject01: {
         display: "block",
         margin: "auto",
-        marginTop: "75px",
+        marginTop: "100px",
         width: "300px"
       },
       styleObject02: {
