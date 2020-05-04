@@ -53,6 +53,9 @@ export default {
         artistName: "",
         projectTitle: "",
         link: ""
+      },
+      methods: {
+        submitForm() {}
       }
     };
   }
