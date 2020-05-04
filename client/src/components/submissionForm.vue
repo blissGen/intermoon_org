@@ -14,6 +14,8 @@
 </template>
 
 <script>
+//import axios from "axios";
+
 export default {
   name: "submissionForm",
   data: function() {
@@ -34,7 +36,7 @@ export default {
         display: "block",
         margin: "auto",
         marginTop: "50px",
-        width: "300px"
+        width: "200px"
       }
     };
   }
