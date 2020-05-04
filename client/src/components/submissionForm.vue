@@ -1,13 +1,24 @@
 <template>
   <div class="sibmissionForm">
-    <form>
-      <input :style="styleObject01" type="text" placeholder="artist name ..." />
+    <form @submit.prevent="submitForm">
+      <input
+        :style="styleObject01"
+        type="text"
+        placeholder="artist name ..."
+        v-model="formData.artistName"
+      />
       <input
         :style="styleObject02"
         type="text"
         placeholder="project title ..."
+        v-model="formData.projectTitle"
       />
-      <input :style="styleObject02" type="text" placeholder="link ..." />
+      <input
+        :style="styleObject02"
+        type="text"
+        placeholder="link ..."
+        v-model="formData.link"
+      />
       <button :style="styleObject03" type="submit">submit</button>
     </form>
   </div>
@@ -37,6 +48,11 @@ export default {
         margin: "auto",
         marginTop: "50px",
         width: "200px"
+      },
+      formData: {
+        artistName: "",
+        projectTitle: "",
+        link: ""
       }
     };
   }
