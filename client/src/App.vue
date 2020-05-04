@@ -23,9 +23,7 @@
 
 #nav {
   padding: 20px;
-  text-align: left;
 }
-
 #nav a {
   text-decoration: none;
   font-weight: normal;
