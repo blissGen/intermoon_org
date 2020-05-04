@@ -20,5 +20,3 @@ class IndexBackground {
     background(this.n1, this.n2, this.n3);
   }
 }
-
-//p5
