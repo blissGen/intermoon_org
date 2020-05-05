@@ -26,7 +26,7 @@
 
 <script>
 //import axios from "axios";
-
+import SubmitService from "../SubmitService";
 export default {
   name: "submissionForm",
   data: function() {
@@ -53,6 +53,14 @@ export default {
         artistName: "",
         projectTitle: "",
         link: ""
+      },
+      error: "",
+      async created() {
+        try {
+          this.submissions = await SubmitService.getSubmissions();
+        } catch (err) {
+          this.error = err.message;
+        }
       },
       methods: {
         submitForm() {}
