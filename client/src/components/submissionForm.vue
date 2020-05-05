@@ -1,6 +1,5 @@
 <template>
-  <div class="sibmissionForm">
-    <form @submit.prevent>
+  <div class="submissionForm">
       <input
         :style="styleObject01"
         type="text"
@@ -22,7 +21,6 @@
       <button :style="styleObject03" @click="submitForm()" type="submit">
         submit
       </button>
-    </form>
   </div>
 </template>
 
@@ -51,6 +49,7 @@ export default {
         marginTop: "50px",
         width: "200px"
       },
+	  submissions: [],
       text: "",
       artistName: "",
       projectTitle: "",
@@ -65,7 +64,8 @@ export default {
       },
       methods: {
         async submitForm() {
-          await SubmitService.insertSubmission(this.ext);
+          await SubmitService.insertSubmission(this.text);
+		  this.submissions = await SubmitService.getSubmissions();
         }
       }
     };
