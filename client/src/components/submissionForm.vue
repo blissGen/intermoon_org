@@ -1,26 +1,26 @@
 <template>
   <div class="submissionForm">
-      <input
-        :style="styleObject01"
-        type="text"
-        placeholder="artist name ..."
-        v-model="text"
-      />
-      <input
-        :style="styleObject02"
-        type="text"
-        placeholder="project title ..."
-        v-model="text"
-      />
-      <input
-        :style="styleObject02"
-        type="text"
-        placeholder="link ..."
-        v-model="text"
-      />
-      <button :style="styleObject03" @click="submitForm()" type="submit">
-        submit
-      </button>
+    <input
+      :style="styleObject01"
+      type="text"
+      placeholder="artist name ..."
+      v-model="text"
+    />
+    <!--<input
+      :style="styleObject02"
+      type="text"
+      placeholder="project title ..."
+      v-model="text"
+    />
+    <input
+      :style="styleObject02"
+      type="text"
+      placeholder="link ..."
+      v-model="text"
+    />-->
+    <button :style="styleObject03" v-on:click="submitForm()">
+      submit
+    </button>
   </div>
 </template>
 
@@ -49,26 +49,23 @@ export default {
         marginTop: "50px",
         width: "200px"
       },
-	  submissions: [],
+      submissions: [],
       text: "",
-      artistName: "",
-      projectTitle: "",
-      link: "",
-      error: "",
-      async created() {
-        try {
-          this.submissions = await SubmitService.getSubmissions();
-        } catch (err) {
-          this.error = err.message;
-        }
-      },
-      methods: {
-        async submitForm() {
-          await SubmitService.insertSubmission(this.text);
-		  this.submissions = await SubmitService.getSubmissions();
-        }
-      }
+      error: ""
     };
+  },
+  async created() {
+    try {
+      this.submissions = await SubmitService.getSubmissions();
+    } catch (err) {
+      this.error = err.message;
+    }
+  },
+  methods: {
+    async submitForm() {
+      await SubmitService.insertSubmission(this.text);
+      this.submissions = await SubmitService.getSubmissions();
+    }
   }
 };
 </script>
