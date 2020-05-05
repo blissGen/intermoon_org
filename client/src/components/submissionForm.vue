@@ -1,6 +1,6 @@
 <template>
   <div class="sibmissionForm">
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent>
       <input
         :style="styleObject01"
         type="text"
@@ -19,7 +19,9 @@
         placeholder="link ..."
         v-model="link"
       />
-      <button :style="styleObject03" type="submit">submit</button>
+      <button :style="styleObject03" @click="submitForm()" type="submit">
+        submit
+      </button>
     </form>
   </div>
 </template>
@@ -49,6 +51,8 @@ export default {
         marginTop: "50px",
         width: "200px"
       },
+      submissions: [],
+      text: "",
       artistName: "",
       projectTitle: "",
       link: "",
@@ -61,7 +65,9 @@ export default {
         }
       },
       methods: {
-        submitForm() {}
+        async submitForm() {
+          await SubmitService.insertSubmission(this.text);
+        }
       }
     };
   }
