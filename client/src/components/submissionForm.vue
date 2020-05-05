@@ -5,19 +5,19 @@
         :style="styleObject01"
         type="text"
         placeholder="artist name ..."
-        v-model="artistName"
+        v-model="text"
       />
       <input
         :style="styleObject02"
         type="text"
         placeholder="project title ..."
-        v-model="projectTitle"
+        v-model="text"
       />
       <input
         :style="styleObject02"
         type="text"
         placeholder="link ..."
-        v-model="link"
+        v-model="text"
       />
       <button :style="styleObject03" @click="submitForm()" type="submit">
         submit
@@ -51,7 +51,6 @@ export default {
         marginTop: "50px",
         width: "200px"
       },
-      submissions: [],
       text: "",
       artistName: "",
       projectTitle: "",
@@ -66,7 +65,7 @@ export default {
       },
       methods: {
         async submitForm() {
-          await SubmitService.insertSubmission(this.text);
+          await SubmitService.insertSubmission(this.ext);
         }
       }
     };

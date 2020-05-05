@@ -21,6 +21,12 @@ class SubmitService {
         });
     });
   }
+
+  static insertSubmission(text) {
+    return axios.submission(url, {
+      text
+    });
+  }
 }
 
 export default SubmitService;
