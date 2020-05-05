@@ -5,19 +5,19 @@
         :style="styleObject01"
         type="text"
         placeholder="artist name ..."
-        v-model="formData.artistName"
+        v-model="artistName"
       />
       <input
         :style="styleObject02"
         type="text"
         placeholder="project title ..."
-        v-model="formData.projectTitle"
+        v-model="projectTitle"
       />
       <input
         :style="styleObject02"
         type="text"
         placeholder="link ..."
-        v-model="formData.link"
+        v-model="link"
       />
       <button :style="styleObject03" type="submit">submit</button>
     </form>
@@ -49,11 +49,9 @@ export default {
         marginTop: "50px",
         width: "200px"
       },
-      formData: {
-        artistName: "",
-        projectTitle: "",
-        link: ""
-      },
+      artistName: "",
+      projectTitle: "",
+      link: "",
       error: "",
       async created() {
         try {
