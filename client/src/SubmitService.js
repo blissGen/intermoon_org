@@ -17,7 +17,7 @@ class SubmitService {
   }
   static insertSubmission(text) {
     return axios.post(url, {
-      text
+		text
     });
   }
 }

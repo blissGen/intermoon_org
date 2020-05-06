@@ -1,5 +1,5 @@
 <template>
-  <div class="submissionForm">
+  <div class="submission">
     <input
       :style="styleObject01"
       type="text"
@@ -18,7 +18,7 @@
       placeholder="link ..."
       v-model="text"
     />-->
-    <button :style="styleObject03" v-on:click="submitForm()">
+    <button :style="styleObject03" v-on:click="submitForm">
       submit
     </button>
   </div>
