@@ -11,7 +11,7 @@
     </transition>
   </div>
 </template>
-
+<script></script>
 <style>
 #app {
   font-family: Helvetica, Arial, sans-serif;

@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="landingPage">
     <p :style="styleObject01">{{ msg }}</p>
     <h1></h1>
   </div>
@@ -23,7 +23,7 @@ export default {
     };
   },
   mounted() {
-    const script = function(p5) {
+    const script = p5 => {
       let indexBG;
       let indexB = [];
 

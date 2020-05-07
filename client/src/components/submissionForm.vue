@@ -18,7 +18,13 @@
       placeholder="link ..."
       v-model="formData.link"
     />
-    <button :style="styleObject03" v-on:click="submitForm">
+    <button
+      :style="styleObject03"
+      @click="
+        submitForm();
+        refreshPage();
+      "
+    >
       submit
     </button>
   </div>
@@ -52,6 +58,9 @@ export default {
         artistName: "",
         projectTitle: "",
         link: ""
+      },
+      refreshPage() {
+        window.location.reload();
       },
       submissions: [],
       error: ""
