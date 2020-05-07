@@ -25,7 +25,6 @@
 </template>
 
 <script>
-//import axios from "axios";
 import SubmitService from "../SubmitService";
 export default {
   name: "submissionForm",
