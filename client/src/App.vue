@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" @click="refreshPage">
       <router-link :to="{ name: 'Home' }">intermoon_</router-link> |
       <router-link :to="{ name: 'Audio' }">audio</router-link> |
       <router-link :to="{ name: 'Visual' }">visual</router-link> |
@@ -11,7 +11,21 @@
     </transition>
   </div>
 </template>
-<script></script>
+
+<script>
+export default {
+  data: function() {
+    return {
+      refreshPage() {
+        setTimeout(function() {
+          window.location.reload();
+        }, 200);
+      }
+    };
+  }
+};
+</script>
+
 <style>
 #app {
   font-family: Helvetica, Arial, sans-serif;
@@ -42,7 +56,7 @@
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-out;
+  transition: opacity 1s ease-out;
 }
 
 .fade-leave-to {
