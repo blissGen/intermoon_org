@@ -1,23 +1,23 @@
 <template>
-  <div class="submission">
+  <div class="submissionForm">
     <input
       :style="styleObject01"
       type="text"
       placeholder="artist name ..."
-      v-model="text"
+      v-model="formData.artistName"
     />
-    <!--<input
+    <input
       :style="styleObject02"
       type="text"
       placeholder="project title ..."
-      v-model="text"
+      v-model="formData.projectTitle"
     />
     <input
       :style="styleObject02"
       type="text"
       placeholder="link ..."
-      v-model="text"
-    />-->
+      v-model="formData.link"
+    />
     <button :style="styleObject03" v-on:click="submitForm">
       submit
     </button>
@@ -49,8 +49,12 @@ export default {
         marginTop: "50px",
         width: "200px"
       },
+      formData: {
+        artistName: "",
+        projectTitle: "",
+        link: ""
+      },
       submissions: [],
-      text: "",
       error: ""
     };
   },
@@ -63,7 +67,7 @@ export default {
   },
   methods: {
     async submitForm() {
-      await SubmitService.insertSubmission(this.text);
+      await SubmitService.insertSubmission(this.formData);
       this.submissions = await SubmitService.getSubmissions();
     }
   }
