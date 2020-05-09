@@ -19,7 +19,7 @@ export default {
       refreshPage() {
         setTimeout(function() {
           window.location.reload();
-        }, 200);
+        }, 100);
       }
     };
   }
@@ -32,7 +32,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
-  color: #ffffff;
+  color: #000000;
 }
 
 #nav {

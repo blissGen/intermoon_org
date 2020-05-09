@@ -20,7 +20,8 @@ export default {
         justifyContent: "center",
         alignItems: "center",
         fontSize: "45px",
-        fontWeight: "lighter"
+        fontWeight: "lighter",
+		color: "#ffffff"
       },
       graphic() {
         const script = p5 => {
