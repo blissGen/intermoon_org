@@ -22,8 +22,7 @@ async function loadSubmissionsCollection() {
   ('mongodb+srv://ntrmn:mod%5Fsynth2020@intermoon-cluster-viqge.gcp.mongodb.net/test?retryWrites=true&w=majority', {
 	useUnifiedTopology: true	
   });
-}	
-return client.db('intermoon_submissions').collection('submissions');
-
+  return client.db('intermoon_submissions').collection('submissions');
+}
 
 module.exports = router;
