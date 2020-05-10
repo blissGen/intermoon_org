@@ -1,7 +1,7 @@
 {
   "name": "intermoon_",
   "version": "1.0.0",
-  "description": "intermoon_ web application",
+  "description": "intermoon_ SPA",
   "main": "index.js",
   "scripts": {
 	"start": "node server/index.js",
