@@ -9,7 +9,7 @@ app.use(cors());
 
 const submissions = require('./routes/api/submissions');
 
-app.use('/api/submissions', submissions);
+app.use('/api/submissions', posts);
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/public/'));
