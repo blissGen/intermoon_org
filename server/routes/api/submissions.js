@@ -19,9 +19,9 @@ router.post('/', async (req, res) => {
 
 async function loadSubmissionsCollection() {
   const client = await mongodb.MongoClient.connect
-  ('mongodb+srv://ntrmn:mod%5Fsynth2020@intermoon-cluster-viqge.gcp.mongodb.net/test?retryWrites=true&w=majority', {
-	useUnifiedTopology: true	
-  });
+  ('mongodb+srv://ntrmn:mod%5Fsynth2020@intermoon-cluster-viqge.gcp.mongodb.net/test?retryWrites=true&w=majority')//, {
+//	useUnifiedTopology: true	
+//  });
   return client.db('intermoon_submissions').collection('submissions');
 }
 
